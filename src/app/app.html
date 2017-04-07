@@ -1,0 +1,21 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar style="height: 112px;">
+      <ion-label style="padding-left: 12px;font-size: 1.5rem;color: #fff;margin: 0px;">Bienvenido,</ion-label>
+      <ion-label id="nombreUsuario" style="padding-left: 12px;font-size: 2rem;font-weight: 500;color: #fff;margin: 0px;"></ion-label>
+      <ion-label style="padding-left: 12px;font-size: 1.5rem;color: #fff;margin: 0px;">Miercoles, 05 abr 2017</ion-label>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content style="padding-top: 112px;">
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
