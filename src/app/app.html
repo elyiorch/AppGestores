@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" id="reportsMenu">
   <ion-header>
     <ion-toolbar style="height: 112px;">
       <ion-label style="padding-left: 12px;font-size: 1.5rem;color: #fff;margin: 0px;">Bienvenido,</ion-label>
@@ -9,7 +9,7 @@
 
   <ion-content style="padding-top: 112px;">
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <button menuClose ion-item *ngFor="let p of pages" [class.activeHighLight]="verActive(p)" (click)="openPage(p)">
         {{p.title}}
       </button>
     </ion-list>
